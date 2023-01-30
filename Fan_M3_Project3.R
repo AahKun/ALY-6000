@@ -31,11 +31,13 @@ temp1 <- count(cts) #method 2: use count to create two variables, names and freq
 temp1
 
 #7 - Create a subset, <temp2>, of just the species variable and display the first 3 records
-temp2 <- cts$species[1:3] #first three species variables
+temp2 <- subset(tBio, as.numeric(row.names(tBio)) <= 3, select = species) #method 1: first three species variables
+#temp2 <- cts$species[1:3] #method 2: first three species variables
 temp2
 
 #8 - Create a table, <t>, of the species variable. Display the class of <t>
 t <- table(cts$species) #create a table of the species variable
+t
 class(t)
 
 #9 - Convert <t> to a data frame named <df> and display the results
